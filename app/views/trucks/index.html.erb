@@ -1,0 +1,6 @@
+<h1>Here are the trucks currently submitted</h1>
+  <ul>
+    <% @trucks.each do |truck| %>
+      <li><%= link_to truck.make + ", " + truck.model, truck_path(truck) %></li>
+    <% end %>
+  </ul>

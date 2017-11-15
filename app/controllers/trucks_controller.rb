@@ -1,8 +1,11 @@
-class TruckController < ApplicationController
+class TrucksController < ApplicationController
   def index
+    @trucks = Truck.all
+    render :index
   end
 
   def show
+    @truck = Truck.find(params[:id])
   end
 
   def edit

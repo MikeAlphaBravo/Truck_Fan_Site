@@ -1,7 +1,13 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+truck_list = [
+  [ "https://i.ytimg.com/vi/qOtrxsoXMj4/maxresdefault.jpg", "Jeep", "Rubicon", "2015", "Tom Rogers" ],
+  [ "https://scontent-sea1-1.cdninstagram.com/t51.2885-15/e35/13744105_564876877018349_354395768_n.jpg", "Toyota", "4Runner", "2016", "Susan Wendlehoff" ],
+  [ "http://image.fourwheeler.com/f/187870487+w660+h440+re0+cr1+ar0/001a-international-scout-lead-photo.jpg", "International", "Scout", "1983", "DAWEsome" ],
+  [ "https://gearheads.org/wp-content/uploads/2016/10/off-road-bronco.jpg", "Ford", "Bronco", "1978", "Finigan Smotherbottom" ],
+  [ "http://truckszilla.com/wp-content/uploads/2017-Land-Rover-Defender-front-side.jpg", "Land Rover", "Defender", "2017", "Riley Tomfoolery" ],
+  [ "http://cdn.cnn.com/cnnnext/dam/assets/160128143458-land-rover-defender-11-super-169.jpg", "Land Rover", "Defender", "1996", "William Ford" ],
+  [ "http://assets.nydailynews.com/polopoly_fs/1.2621972.1462219487!/img/httpImage/image.JPG_gen/derivatives/article_1200/2017-ford-f-150-raptor.JPG", "Ford", "F-150 Raptor", "2018", "Susan Whitley" ]
+]
+
+truck_list.each do |link, make, model, year, author|
+  Truck.create( link: link, make: make, model: model, year: year, author: author )
+end
