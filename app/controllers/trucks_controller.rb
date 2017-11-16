@@ -1,12 +1,8 @@
 class TrucksController < ApplicationController
   def index
     @trucks = Truck.all
+    @trucks = @trucks.only_makes(params[:make]) if params[:make].present?
   end
-
-  # def toyotas
-  #   @trucks = Truck.only_makes("Toyota")
-  #   render :index
-  # end
 
   def show
     @truck = Truck.find(params[:id])

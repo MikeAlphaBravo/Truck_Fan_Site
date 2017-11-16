@@ -1,14 +1,14 @@
 <h1>Here are the trucks currently submitted</h1>
-<!-- <div class="dropdown">
+<div class="dropdown">
   <button class="btn btn-primary dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Dropdown button
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="/trucks/make">Toyota</a>
+    <a class="dropdown-item" href="?make=Toyota">Toyota</a>
     <a class="dropdown-item" href="#">Another action</a>
     <a class="dropdown-item" href="#">Something else here</a>
   </div>
-</div> -->
+</div>
 <ul>
   <% @trucks.each do |truck| %>
     <li><%= link_to truck.make + ", " + truck.model, truck_path(truck) %></li>
