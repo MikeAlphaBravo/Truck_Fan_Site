@@ -1,25 +1,56 @@
 class TrucksController < ApplicationController
   def index
     @trucks = Truck.all
-    render :index
   end
+
+  # def toyotas
+  #   @trucks = Truck.only_makes("Toyota")
+  #   render :index
+  # end
 
   def show
     @truck = Truck.find(params[:id])
   end
 
   def edit
+    @truck = Truck.find(params[:id])
   end
 
   def update
+    @truck = Truck.find(params[:id])
+    if @truck.update(truck_params)
+      redirect_to trucks_path
+    else
+      render :edit
+    end
   end
 
   def destroy
+    @truck = Truck.find(params[:id])
+    @truck.destroy
+    redirect_to trucks_path
   end
 
   def new
+    @truck = Truck.new
   end
 
   def create
+    @truck = Truck.new(truck_params)
+    if @truck.save
+      redirect_to trucks_path
+    else
+      render :new
+    end
   end
+
+  def comments
+    @comments = Comment.includes(:trucks).all
+  end
+
+
+  private
+    def truck_params
+      params.require(:truck).permit(:link, :make, :model, :year, :author)
+    end
 end

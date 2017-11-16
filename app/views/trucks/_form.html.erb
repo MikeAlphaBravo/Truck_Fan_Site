@@ -1,0 +1,15 @@
+<%= render "layouts/errors", :object => @truck %>
+
+<%= form_for @truck do |f| %>
+  <%= f.label :link %>
+  <%= f.text_field :link %>
+  <%= f.label :make %>
+  <%= f.text_field :make %>
+  <%= f.label :model %>
+  <%= f.text_field :model %>
+  <%= f.label :year %>
+  <%= f.text_field :year %>
+  <%= f.label :author %>
+  <%= f.text_field :author %>
+  <%= f.submit %>
+<% end %>
