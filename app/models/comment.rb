@@ -1,4 +1,4 @@
 class Comment < ActiveRecord::Base
   belongs_to :truck
-  validates :author, :presence => true
+  validates :author, :comment, :presence => true
 end

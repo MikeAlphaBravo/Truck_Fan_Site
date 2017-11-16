@@ -1,15 +1,29 @@
 <%= render "layouts/errors", :object => @truck %>
 
-<%= form_for @truck do |f| %>
-  <%= f.label :link %>
-  <%= f.text_field :link %>
-  <%= f.label :make %>
-  <%= f.text_field :make %>
-  <%= f.label :model %>
-  <%= f.text_field :model %>
-  <%= f.label :year %>
-  <%= f.text_field :year %>
-  <%= f.label :author %>
-  <%= f.text_field :author %>
-  <%= f.submit %>
-<% end %>
+<div class="row">
+  <div class="col-6">
+    <%= form_for @truck do |f| %>
+      <div class="form-group row">
+        <%= f.label :link, :class => "col-sm-3 col-form-label"%>
+        <%= f.text_field :link, :class => "form-control col-sm-9", :placeholder => "Add an image link" %>
+      </div>
+      <div class="form-group row">
+        <%= f.label :make, :class => "col-sm-3 col-form-label" %>
+        <%= f.text_field :make, :class => "form-control col-sm-9" %>
+      </div>
+      <div class="form-group row">
+        <%= f.label :model, :class => "col-sm-3 col-form-label" %>
+        <%= f.text_field :model, :class => "form-control col-sm-9" %>
+      </div>
+      <div class="form-group row">
+        <%= f.label :year, :class => "col-sm-3 col-form-label" %>
+        <%= f.text_field :year, :class => "form-control col-sm-9" %>
+      </div>
+      <div class="form-group row">
+        <%= f.label :author, :class => "col-sm-3 col-form-label" %>
+        <%= f.text_field :author, :class => "form-control col-sm-9" %>
+      </div>
+      <%= f.submit :class => "btn btn-success" %>
+    <% end %>
+  </div>
+</div>

@@ -1,3 +1,5 @@
+Truck.destroy_all
+
 truck_list = [
   [ "https://i.ytimg.com/vi/qOtrxsoXMj4/maxresdefault.jpg", "Jeep", "Rubicon", "2015", "Tom Rogers" ],
   [ "https://scontent-sea1-1.cdninstagram.com/t51.2885-15/e35/13744105_564876877018349_354395768_n.jpg", "Toyota", "4Runner", "2016", "Susan Wendlehoff" ],
@@ -11,3 +13,13 @@ truck_list = [
 truck_list.each do |link, make, model, year, author|
   Truck.create( link: link, make: make, model: model, year: year, author: author )
 end
+
+50.times do |index|
+  Truck.create( link: "https://i.pinimg.com/736x/6f/04/94/6f0494b9cd5809c9600e17a16fc7719b--chevy-x-lifted-chevy.jpg",
+                make: Faker::Vehicle.manufacture,
+                model: "Cool Truck",
+                year: "1978",
+                author: "MB" )
+end
+
+p "You have now have #{Truck.count} trucks in your db"
