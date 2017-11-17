@@ -4,17 +4,25 @@
   Filter By:
   <button class="btn btn-primary dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Model
-  </button>
+  </button><br><br>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
     <a class="dropdown-item" href="/trucks">All</a>
-    <a class="dropdown-item" href="?make=Toyota">Toyota</a>
-    <a class="dropdown-item" href="?make=Jeep">Jeep</a>
-    <a class="dropdown-item" href="?make=Ford">Ford</a>
+    <a class="dropdown-item" href="?make=toyota">Toyota</a>
+    <a class="dropdown-item" href="?make=jeep">Jeep</a>
+    <a class="dropdown-item" href="?make=ford">Ford</a>
     <a class="dropdown-item" href="?make=Land Rover">Land Rover</a>
   </div>
 </div>
-<ul>
-  <% @trucks.each do |truck| %>
-    <li><%= link_to truck.make + ", " + truck.model, truck_path(truck) %></li>
-  <% end %>
-</ul>
+<div class="row justify-content-center">
+  <div class="col-9">
+    <div class="apple_pagination">
+      <div class="row justify-content-center">
+        <%= will_paginate @trucks %>
+      </div>
+    </div>
+    <ul class="list-group">
+      <% @trucks.each do |truck| %>
+        <li class="list-group-item"><%= link_to truck.make.split.map(&:capitalize).join(' ') + ", " + truck.model.split.map(&:capitalize).join(' '), truck_path(truck) %></li>
+      <% end %>
+    </ul>
+  </div>

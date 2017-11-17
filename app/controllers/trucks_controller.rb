@@ -1,6 +1,7 @@
 class TrucksController < ApplicationController
   def index
-    @trucks = Truck.all.order("make ASC")
+    @trucks = Truck.index(params[:page])
+    # @trucks = Truck.all.order("make ASC")
     @trucks = @trucks.only_makes(params[:make]) if params[:make].present?
     @trucks = @trucks.search(params[:search]) if params[:search].present?
   end

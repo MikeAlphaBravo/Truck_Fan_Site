@@ -33,6 +33,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'faker'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'will_paginate'
 
 group :development, :test do
   gem 'byebug', platform: :mri
