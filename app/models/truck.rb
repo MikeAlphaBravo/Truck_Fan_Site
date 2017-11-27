@@ -8,9 +8,9 @@ class Truck < ApplicationRecord
   scope :only_makes, -> (make_parameter) { where("make like ?", "%#{make_parameter}%")}
   scope :search, -> (search) { where("make like ? OR model like ? OR year like ?", "%#{search.downcase}%", "%#{search.downcase}%", "%#{search.downcase}%")}
 
-  before_save :downcase_fields
-
-   def downcase_fields
-      self.name.downcase!
-   end
+  # before_save :downcase_fields
+  #
+  #  def downcase_fields
+  #     self.name.downcase!
+  #  end
 end

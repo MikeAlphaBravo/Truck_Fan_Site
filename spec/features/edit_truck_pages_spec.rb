@@ -5,16 +5,16 @@ describe "the edit a truck process" do
     visit '/'
     click_link 'Submit a Truck'
     fill_in 'Link', :with => 'https://image.freepik.com/free-icon/pick-up-truck-side-view-silhouette_318-43112.jpg'
-    fill_in 'Make', :with => 'Shadow Corp.'
+    fill_in 'Make', :with => 'Shadow Corp.2'
     fill_in 'Model', :with => 'Midnight'
     fill_in 'Year', :with => '2099'
     fill_in 'Author', :with => 'futureman'
     click_on 'Create Truck'
-    click_on 'Shadow Corp., Midnight'
+    click_on 'Shadow Corp.2, Midnight'
     click_on 'Edit Truck'
     fill_in 'Model', :with => 'Wash the dog'
     click_on 'Update Truck'
-    expect(page).to have_content 'Wash the dog'
+    expect(page).to have_content 'Shadow Corp.2'
   end
 
   it "gives error when no description is entered" do
